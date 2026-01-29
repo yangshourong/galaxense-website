@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066CC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00A896;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow4">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1200" height="500" fill="url(#bg4)"/>
+  
+  <!-- 装饰圆 -->
+  <circle cx="100" cy="350" r="180" fill="white" opacity="0.1"/>
+  <circle cx="1100" cy="120" r="160" fill="white" opacity="0.08"/>
+  
+  <!-- 医院合作图示 -->
+  <g transform="translate(500, 100)" filter="url(#glow4)">
+    <!-- 医院建筑 -->
+    <rect x="0" y="40" width="200" height="120" rx="5" fill="white" opacity="0.95"/>
+    <!-- 医院标志 -->
+    <rect x="75" y="10" width="50" height="40" rx="3" fill="#FF0000"/>
+    <text x="100" y="40" text-anchor="middle" font-size="24" fill="white" font-weight="bold">+</text>
+    <!-- 医院名称 -->
+    <text x="100" y="70" text-anchor="middle" font-size="14" fill="#1A1A2E" font-weight="bold">三甲医院</text>
+    <!-- 窗户 -->
+    <rect x="20" y="85" width="25" height="25" rx="2" fill="#E8F4FD"/>
+    <rect x="55" y="85" width="25" height="25" rx="2" fill="#E8F4FD"/>
+    <rect x="120" y="85" width="25" height="25" rx="2" fill="#E8F4FD"/>
+    <rect x="155" y="85" width="25" height="25" rx="2" fill="#E8F4FD"/>
+    <!-- 大门 -->
+    <rect x="80" y="120" width="40" height="40" rx="2" fill="#0066CC"/>
+    
+    <!-- 握手图标 -->
+    <g transform="translate(240, 60)">
+      <circle cx="30" cy="30" r="40" fill="white" opacity="0.95"/>
+      <!-- 握手 -->
+      <path d="M15,25 L25,20 L35,25 L45,20 L50,30 L45,40 L35,45 L25,40 L15,45 L10,35 Z" fill="#00A896"/>
+      <circle cx="30" cy="30" r="25" fill="none" stroke="#0066CC" stroke-width="2"/>
+    </g>
+    
+    <!-- 公司标志 -->
+    <g transform="translate(320, 40)">
+      <rect x="0" y="0" width="80" height="80" rx="10" fill="white" opacity="0.95"/>
+      <text x="40" y="35" text-anchor="middle" font-size="12" fill="#0066CC" font-weight="bold">龙罡</text>
+      <text x="40" y="55" text-anchor="middle" font-size="10" fill="#00A896">智能</text>
+    </g>
+  </g>
+  
+  <!-- 标题 -->
+  <text x="600" y="380" text-anchor="middle" font-size="36" fill="white" font-weight="bold" filter="url(#glow4)">医工携手 共创未来</text>
+  <text x="600" y="420" text-anchor="middle" font-size="18" fill="white" opacity="0.9">与多家三甲医院建立战略合作</text>
+</svg>
