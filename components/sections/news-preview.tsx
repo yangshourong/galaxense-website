@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -16,6 +17,7 @@ const newsItems = [
     category: "公司新闻",
     date: "2024-12-15",
     slug: "high-tech-enterprise-certification",
+    coverImage: "/images/news/high-tech-enterprise.svg",
   },
   {
     id: 2,
@@ -24,6 +26,7 @@ const newsItems = [
     category: "科研进展",
     date: "2024-11-28",
     slug: "clinical-trial-results",
+    coverImage: "/images/news/clinical-trial.svg",
   },
   {
     id: 3,
@@ -32,6 +35,7 @@ const newsItems = [
     category: "行业资讯",
     date: "2024-11-10",
     slug: "industry-trends-report",
+    coverImage: "/images/news/industry-trends.svg",
   },
 ];
 
@@ -91,11 +95,14 @@ export function NewsPreviewSection() {
             >
               <Link href={`/news/${item.slug}`}>
                 <Card className="h-full overflow-hidden border-slate-200 hover:shadow-xl transition-all duration-300 group cursor-pointer">
-                  {/* Image Placeholder */}
+                  {/* Cover Image */}
                   <div className="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 relative overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-slate-400 text-sm">文章封面</span>
-                    </div>
+                    <Image
+                      src={item.coverImage}
+                      alt={item.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                     <div className="absolute top-4 left-4">
                       <Badge className={categoryColors[item.category] || "bg-slate-100 text-slate-600"}>
                         {item.category}
